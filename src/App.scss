@@ -1,0 +1,9 @@
+body{
+  &.light-theme{
+    background-color: #FFFFF0;
+  }
+  &.dark-theme{
+    background-color: black;
+  }
+  overflow-x: hidden;
+}

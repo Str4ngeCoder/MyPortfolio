@@ -1,0 +1,25 @@
+const lightTheme = {
+  background: "#FFFFFF",
+  text: "#121212",
+  primary: "#2196F3",
+  secondary: "#FFC107",
+  accent: "#E91E63",
+  error: "#FF5722",
+  warning: "#FF9800",
+  success: "#4CAF50",
+  info: "#00BCD4",
+  link: "#03A9F4",
+  highlight: "#FFC400",
+  disabled: "#BDBDBD",
+  border: "#E0E0E0",
+  header: "#F5F5F5",
+  footer: "#ECEFF1",
+  sidebar: "#E0E0E0",
+  button: "#9E9E9E",
+  selected: "#E0E0E0",
+  code: "#FF9800",
+  backgroundAccent: "#F5F5F5",
+  backgroundAccentInverse: "#1E1E1E",
+};
+
+export default lightTheme;
