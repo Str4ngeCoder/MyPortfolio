@@ -14,9 +14,11 @@ const Navbar = () => {
   return (
     <StyledNavbar className="navbar">
       <div className="container navbar-contents">
-        <a href="#" className="logo">
-          MY PORTFOLIO
-        </a>
+        <h1>
+          <Link to="/" className="logo" onClick={() => setIsActive(1)}>
+            SHAD's PORTFOLIO
+          </Link>
+        </h1>
         <div className="nav-menu d-flex">
           <Link
             to="/"
@@ -50,9 +52,10 @@ const StyledNavbar = styled.div`
   height: 6rem;
   background-color: ${(props) => props.theme.backgroundAccent};
   border-bottom: 0.1rem solid ${(props) => props.theme.border};
-  position: fixed;
-  width: 100%;
+  width: 100dvw;
   &.navbar {
+    position: fixed;
+    top: 0;
     .nav-menu {
       gap: min(3rem, 3vw);
       a {

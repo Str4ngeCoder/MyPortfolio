@@ -14,7 +14,7 @@ const Resume = () => {
           <p>Odisha, India</p>
           <p>+91-8327798120</p>
           <p>shadjafarazmi.sja@gmail.com</p>
-          <a target="_blank" href="https://www.linkedin.com/in/shad-jafar-azmi-588443205" className="text-decoration-none">
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shad-jafar-azmi-588443205" className="text-decoration-none">
             LinkedIn
           </a>
         </section>
@@ -186,7 +186,7 @@ Detail oriented.</p>
 export default Resume;
 
 const StyledResumeContainer = styled.section`
-  padding-top: 8rem;
+  padding-top: 2rem;
   color: ${(props) => props.theme.text};
   font-size: 1.4rem;
   .head {

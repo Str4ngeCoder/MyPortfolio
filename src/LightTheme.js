@@ -1,6 +1,7 @@
 const lightTheme = {
   background: "#FFFFFF",
   text: "#121212",
+  textInverse: "#FFFFFF",
   primary: "#2196F3",
   secondary: "#FFC107",
   accent: "#E91E63",

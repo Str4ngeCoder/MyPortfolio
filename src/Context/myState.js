@@ -4,7 +4,7 @@ import MyContext from "./myContext";
 const MyState = (props) => {
   const [currentTheme, setCurrentTheme] = useState("light-theme");
   const toggleTheme = () => {
-    currentTheme == "light-theme"
+    currentTheme === "light-theme"
       ? setCurrentTheme("dark-theme")
       : setCurrentTheme("light-theme");
   };

@@ -3,7 +3,7 @@ import hello from "../Assets/Images/hello.png"
 
 const Home = () => {
   return (
-    <StyledHome className="container">
+    <StyledHome>
       <img className="hello" src={hello} alt="hello"/>
       <div>
         <div className="h2 text">Hi there! It's me, <b>Shad</b>.</div>
@@ -16,43 +16,45 @@ const Home = () => {
 };
 
 const StyledHome = styled.section`
---text-delay: 1.5s;
+--text-delay: 0.5s;
+--img-position: calc(100% - 8.5rem);
 
-  height: calc(100vh - 6rem);
+  min-height: calc(100dvh - 12rem);
   display: grid;
   place-items: center;
+  position: relative;
   img{
-    height: 20vh;
+    height: 16rem;
     aspect-ratio: 3/5;
     position: absolute;
   }
   .hello{
-    right: calc(100% - 11vh);
+    right: var(--img-position);
     transform: rotateZ(45deg);
     animation: popin calc(1.5*var(--text-delay)) ease-in;
     @keyframes popin{
-      0%,67%{
+      0%{
         right: 100%;
         transform: rotateZ(0deg);
       }
       100%{
-        right: calc(100% - 11vh);
+        right: var(--img-position);
         transform: rotateZ(45deg);
       }
     }
   }
   .hello-reverse{
     rotate: y 180deg;
-    left: calc(100% - 11vh);
+    left: var(--img-position);
     transform: rotateZ(45deg);
     animation: popinrev calc(1.5*var(--text-delay)) ease-in;
     @keyframes popinrev{
-      0%,67%{
+      0%{
         left: 100%;
         transform: rotateZ(0deg);
       }
       100%{
-        left: calc(100% - 11vh);
+        left: var(--img-position);
         transform: rotateZ(45deg);
       }
     }
@@ -65,7 +67,7 @@ const StyledHome = styled.section`
     position: relative;
   }
 
-  .h2{
+  /* .h2{
     animation: fromleft var(--text-delay) linear;
     @keyframes fromleft {
       0%{
@@ -75,9 +77,9 @@ const StyledHome = styled.section`
         right: 0;
       }
     }
-  }
+  } */
 
-  .h1{
+  /* .h1{
     animation: fromright var(--text-delay) linear;
     @keyframes fromright {
       0%{
@@ -87,9 +89,9 @@ const StyledHome = styled.section`
         left: 0;
       }
     }
-  }
+  } */
 
-  .fs-3{
+  /* .fs-3{
     animation: frombottom calc(2*var(--text-delay)) linear;
     @keyframes frombottom {
       0%,50%{
@@ -101,7 +103,7 @@ const StyledHome = styled.section`
         opacity: 1;
       }
     }
-  }
+  } */
 
 `;
 

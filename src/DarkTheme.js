@@ -1,6 +1,7 @@
 const darkTheme = {
   background: "#121212",
   text: "#FFFFFF",
+  textInverse: "#121212",
   primary: "#2196F3",
   secondary: "#FFC107",
   accent: "#E91E63",
