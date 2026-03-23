@@ -119,6 +119,7 @@ const ScrollHighlight = () => {
           nisl sodales tincidunt.
         </span> */}
       <section className="scroll-region">
+        {/* <p className="h1 h-100 | padding-component">Scroll to see the <i>MAGIC</i></p> */}
         <span className="content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus
           neque. Fusce ac tincidunt nisl. Quisque sollicitudin rhoncus dui vel
@@ -235,6 +236,7 @@ const ScrollHighlight = () => {
           Morbi volutpat odio at enim efficitur lacinia. Duis eleifend ante at
           nisl sodales tincidunt.
         </span>
+        {/* <p className="h1 h-100 | padding-component">HOPE TOU LIKE IT.</p> */}
       </section>
     </StyledSection>
   );
@@ -243,21 +245,30 @@ const ScrollHighlight = () => {
 const StyledSection = styled.section`
   font-size: 1.2rem;
   width: 50%;
+  .padding-component{
+    padding: 2rem;
+    display:grid;
+    place-items: center;
+    color: ${(props) => props.theme.text};
+  }
   .scroll-region {
       border: 0.3rem solid ${(props) => props.theme.border};
-      background-color: black;
-      padding: 1.5rem;
+      background-color: ${(props) => props.theme.backgroundAccent};
+      padding: 5rem 1.5rem;
+      height: calc(100vh - 30rem);
+      overflow-y: scroll;
     .content {
       font-weight: normal;
-      color: hsl(0 0% 100% / 0.2);
+      /* color: hsl(0 0% 100% / 0.2); */
+      color: ${(props) => props.theme.text}20;
       background-clip: text;
       background-repeat: no-repeat;
       background-size: 0% 100%;
       background-image: linear-gradient(to right, red, blue);
-      animation: scroll-reveal linear forwards 5s;
+      animation: scroll-reveal linear forwards;
       animation-timeline: view();
-      animation-range-start: cover;
-      animation-range-end: cover;
+      animation-range-start: cover 69vh;
+      animation-range-end: cover 166vh;
     }
   }
   @keyframes scroll-reveal {

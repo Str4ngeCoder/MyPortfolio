@@ -1,14 +1,17 @@
-import MyContext from "../Context/myContext";
-import { useContext } from "react";
+// import MyContext from "../Context/myContext";
+// import { useContext } from "react";
 import { styled } from "styled-components";
-import svgs from "../Assets/svgs/svgs";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTheme } from "../DataStore/Slice";
+import svgs from "../Assets/svgs";
 
-const ToggleButton = (props) => {
-  const { toggleTheme, currentTheme, isLightTheme } = useContext(MyContext);
+const ToggleButton = () => {
+  const currentTheme = useSelector((state) => state.theme.value);
+  const dispatch = useDispatch();
+  // const { toggleTheme, currentTheme, isLightTheme } = useContext(MyContext);
   return (
     <StyledToggleButton
-      className={isLightTheme ? "light-theme-on" : "dark-theme-on"}
-      aria-label="Toggle theme"
+      className={`${currentTheme === "light-theme" ? "light-theme-on" : "dark-theme-on"}`}
     >
       <label className="light-theme-label" htmlFor="customSwitch">
         {svgs.sun}
@@ -18,7 +21,7 @@ const ToggleButton = (props) => {
         aria-label="toggle-theme"
         id="customSwitch"
         onClick={() => {
-          toggleTheme();
+          dispatch(toggleTheme());
         }}
       />
       <label className="dark-theme-label" htmlFor="customSwitch">
