@@ -2,9 +2,11 @@ import styled from "styled-components";
 import ToggleButton from "../Components/ToggleButton";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(1);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const activeTab = window.location.pathname;
@@ -42,7 +44,7 @@ const Navbar = () => {
             My Components
           </Link>
         </div>
-        <ToggleButton />
+        <ToggleButton/>
       </div>
     </StyledNavbar>
   );

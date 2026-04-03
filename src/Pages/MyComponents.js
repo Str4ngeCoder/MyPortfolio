@@ -6,6 +6,7 @@ import { useState } from "react";
 import ScrollHighlight from "../Components/ScrollHighlight";
 import CustomButton from "../Components/CustomButton";
 import Modal from "../Components/Modal";
+import {Tooltip} from "../Components/Tooltip";
 
 const MyComponents = () => {
   const [componentnumber, setComponentNumber] = useState(null);
@@ -19,11 +20,13 @@ const MyComponents = () => {
       case 2:
         return <CustomSelect />;
       case 3:
-        return <ToggleButton />;
+        return <ToggleButton isfunctional={+false}/>;
       case 4:
         return <ScrollHighlight/>;
       case 5:
         return <Modal/>;
+      case 6:
+        return <Tooltip/>;
       default:
         return <section className="d-flex justify-content-center h1">Click on any component to check it out</section>;
     }
@@ -42,6 +45,7 @@ const MyComponents = () => {
         <button type="button" className={`btn ${active === 3 ? 'btn-success' : ''}`} onClick={() => handleClick(3)}>Toggle Button</button>
         <button type="button" className={`btn ${active === 4 ? 'btn-success' : ''}`} onClick={() => handleClick(4)} title="Scroll to see text highlight">Scroll highlight</button>
         <button type="button" className={`btn ${active === 5 ? 'btn-success' : ''}`} onClick={() => handleClick(5)} title="Modal">Modal</button>
+        <button type="button" className={`btn ${active === 6 ? 'btn-success' : ''}`} onClick={() => handleClick(6)} title="Tooltip">Tooltip</button>
       </section>
       <section className="component-container">
         {/* { componentnumber === 0 ? <ToggleButton/> 
@@ -76,6 +80,7 @@ const StyledMyComponent = styled.section`
 
   .components-links{
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
     overflow-x: auto;

@@ -1,9 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
-
 const slice = createSlice({
   name: 'theme',
   initialState: {
-    value: 'light-theme'
+    value: window.matchMedia("(prefers-color-scheme: light)").matches ? 'light-theme' : 'dark-theme'
   },
   reducers: {
     toggleTheme: (state) => {

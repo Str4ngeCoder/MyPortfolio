@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const CustomButton = ({text,onClick}) => {
+const CustomButton = ({text,onClick,className}) => {
     // const [text, setText] = useState(null);
     // const handleClick = () => {
     //     setText('Hello! Button here:)')
     // }
   return (
     <>
-      <StyledButton type="button" onClick={onClick} aria-label="Custom button">{text ? text:"Custom Button"}</StyledButton>
+      <StyledButton type="button" onClick={onClick} aria-label="Custom button" className={className}>{text ? text:"Custom Button"}</StyledButton>
       {/* {text ? <section>{text}</section>: ''} */}
     </>
   );
@@ -16,7 +16,7 @@ const CustomButton = ({text,onClick}) => {
 
 const StyledButton = styled.button`
   max-width: 12rem;
-  padding: 0.6rem;
+  padding: 0.6rem 1rem;
   background-color: ${(props) => props.theme.backgroundAccentInverse};
   border: 0.1rem solid ${(props) => props.theme.backgroundAccentInverse};
   color: ${(props) => props.theme.textInverse};

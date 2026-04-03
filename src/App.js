@@ -1,12 +1,10 @@
 import "./App.scss";
-import React from "react";
 // import MyState from "./Context/myState";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyComponents from "./Pages/MyComponents";
 import MainLayout from "./MainLayout/MainLayout";
 import Home from "./Pages/Home";
 import Resume from "./Pages/Resume";
-import Modal from "./Components/Modal";
 
 function App() {
   return (

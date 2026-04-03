@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import MyContext from "../Context/myContext";
+// import { useContext, useEffect } from "react";
+// import MyContext from "../Context/myContext";
 import { ThemeProvider, styled } from "styled-components";
 import LightTheme from "../LightTheme";
 import DarkTheme from "../DarkTheme";
@@ -15,7 +15,6 @@ const MainLayout = () => {
   // useEffect(() => {
   //   document.body.classList.remove("dark-theme", "light-theme");
   //   document.body.classList.add(`${currentTheme}`);
-  // }, [currentTheme]);
   return (
     <ThemeProvider theme={currentTheme === "light-theme" ? LightTheme : DarkTheme}>
       <StyledMainLayout>

@@ -5,12 +5,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../DataStore/Slice";
 import svgs from "../Assets/svgs";
 
-const ToggleButton = () => {
+const ToggleButton = ({ isfunctional = +true }) => {
   const currentTheme = useSelector((state) => state.theme.value);
   const dispatch = useDispatch();
   // const { toggleTheme, currentTheme, isLightTheme } = useContext(MyContext);
+  const handleClick = () => {
+    if (isfunctional) {
+      dispatch(toggleTheme());
+    }
+  }
   return (
-    <StyledToggleButton
+    <StyledToggleButton 
+      isfunctional={+true} 
       className={`${currentTheme === "light-theme" ? "light-theme-on" : "dark-theme-on"}`}
     >
       <label className="light-theme-label" htmlFor="customSwitch">
@@ -21,7 +27,7 @@ const ToggleButton = () => {
         aria-label="toggle-theme"
         id="customSwitch"
         onClick={() => {
-          dispatch(toggleTheme());
+          handleClick();
         }}
       />
       <label className="dark-theme-label" htmlFor="customSwitch">
